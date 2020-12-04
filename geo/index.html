@@ -4,23 +4,29 @@
     <title>Surfeurs du web</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Surfeurs du web">
-	<script src="gameoflife.js"></script>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
 	<script src="leetspeak.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Share+Tech' rel='stylesheet' type='text/css'>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="public/assets/css/main.css" rel="stylesheet" media="all">
-    <link href="public/assets/css/animation.css" rel="stylesheet" media="all">
+    <link href="../public/assets/css/main.css" rel="stylesheet" media="all">
+    <link href="../public/assets/css/animation.css" rel="stylesheet" media="all">
 
     <!-- Hide .js-only elements if JavaScript is disabled. -->  
     <noscript><style>.js-only { display: none !important; } </style></noscript>
+	
+
+	
   </head>
 
   <body>
   <div class="navbar navbar-inverse navbar-static-top">
       <div class='container'>
           <div class="navbar-header">
-              <a href="" class="navbar-brand">&#12296; Surfeurs du web &#12297;</a>
+              <a href="../" class="navbar-brand">&#12296; Surfeurs du web &#12297;</a>
               
               <!-- Bootstrap button for toggling menu on small-screen devices. Requires JavaScript. -->
               <button type="button" class="navbar-toggle js-only"
@@ -35,7 +41,7 @@
 
           <!-- Menu toggled by Bootstrap button. -->
           <ul class="nav navbar-nav navbar-right collapse navbar-collapse">
-              <li class="js-only"><a href="geo">Geo</a></li>
+              <li class="js-only"><a href="">Geo</a></li>
               <li class="js-only"><a href="secret">Secret de fou</a></li>              
               <li class="js-only">
                   <a href="#" data-toggle="dropdown">
@@ -49,7 +55,7 @@
           
           <noscript><!-- Pure CSS menu for users who disable JavaScript. -->
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="geo">Geo</a></li>
+                <li><a href="">Geo</a></li>
                 <li><a href="secret">Secret de fou</a></li>
                 <li>
                   <a href="#">Plus de trucs</a>
@@ -64,74 +70,51 @@
   </div>
 
 <div class='container-fluid'>
+<h1 style='color: #666'>Nous retrouver : </h1>
+ <div id='map' style='width: 800px; height: 600px;'></div>
+ 	<style>
+        #marker {
+        background-image: url('https://docs.mapbox.com/mapbox-gl-js/assets/washington-monument.jpg');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        }
+         
+        .mapboxgl-popup {
+        max-width: 200px;
+        }
+    </style>
+    <script>
+        let monument = [0.6955,47.3738];
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZmxvcmljb3J0IiwiYSI6ImNraTlnbnZodjBma2cyeHJvMDZqMHFneWsifQ.VjDxwwZVkKCGJi-2tLkJjA';
+        let map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/satellite-v9', // stylesheet location
+            center: [0.6955,47.3738], // starting position [lng, lat]
+            zoom: 12 // starting zoom
+        });
 
-	<form class="form-horizontal">
-	<fieldset>
-
-	<!-- Form Name -->
-	<legend>Ajouter ma trace !</legend>
-
-	<!-- Text input-->
-	<div class="form-group">
-	  <label class="col-md-4 control-label" for="ville">Ville</label>  
-	  <div class="col-md-4">
-	  <input id="ville" name="ville" type="text" placeholder="Tours" class="form-control input-md" required="">
-		
-	  </div>
-	</div>
-
-	<!-- Text input-->
-	<div class="form-group">
-	  <label class="col-md-4 control-label" for="spot">Spot</label>  
-	  <div class="col-md-4">
-	  <input id="spot" name="spot" type="text" placeholder="Les vagues du bord de Loire :" class="form-control input-md">
-		
-	  </div>
-	</div>
-
-	<!-- Text input-->
-	<div class="form-group">
-	  <label class="col-md-4 control-label" for="nickname">Mon petit nom &agrave; moi</label>  
-	  <div class="col-md-4">
-	  <input id="nickname" name="nickname" type="text" placeholder="Mc Walter" class="form-control input-md">
-		
-	  </div>
-	</div>
-	</fieldset>
-	</form>
-	<script>
-	runGameOfLife(100,600);
-	</script>
-	<section class="border text-center border-light p-3 mb-4">
-      <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#centralModalLg">Ajouter !</button>
-    </section>
-	<!-- Central Modal Large -->
-    <div class="modal fade" id="centralModalLg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <!--Content-->
-        <div class="modal-content">
-          <!--Header-->
-          <div class="modal-header">
-            <h4 class="modal-title w-100" id="myModalLabel">Ajout en cours !</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <!--Body-->
-          <div id="loading" class="modal-body">
-            &#x25FC;&#x25FC;&#x25FC;&#x25FB;&#x25FB;&#x25FB;
-          </div>
-          <!--Footer-->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-            <button type="button" class="btn btn-primary">Sauvegarder</button>
-          </div>
-        </div>
-        <!--/.Content-->
-      </div>
-    </div>
-    <!-- Central Modal Large -->
-
+        map.on('zoom', function(e) {
+            console.log(map.getZoom());
+            if(map.getZoom() > 12){
+                let popup = new mapboxgl.Popup({ offset: 25 }).setText(
+                'Tour, Place de verdun'
+                );
+            
+                // create DOM element for the marker
+                let el = document.createElement('div');
+                el.id = 'marker';
+                
+                // create the marker
+                new mapboxgl.Marker(el)
+                .setLngLat(monument)
+                .setPopup(popup) // sets a popup on this marker
+                .addTo(map);
+            }
+        });
+    </script>
 </div>
 
   <div class="footer">
@@ -152,8 +135,26 @@
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>  
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script src="public/assets/js/scroll.js"></script>
-  <script src="public/assets/js/vibrate-phone.js"></script>
+  <script src="../public/assets/js/scroll.js"></script>
+  <script src="../public/assets/js/vibrate-phone.js"></script>
 
   </body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+    <title>Document</title>
+</head>
+<body>
+   
+</body>
 </html>
