@@ -1,4 +1,5 @@
 #Frankencode
+Liens du github : https://github.com/Xbani/SurfeursDuWeb
 Le code source du jeu de la vie est dans notre fichier "gameoflife.js"
 
 Nous avons modifier un template web (https://github.com/CodeWritingCow) pour afficher notre jeu de la vie dans une popup.
