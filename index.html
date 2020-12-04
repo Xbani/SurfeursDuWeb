@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Surfeurs du web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Surfeurs du web">
+	<script src="gameoflife.js"></script>
+	<script src="leetspeak.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Share+Tech' rel='stylesheet' type='text/css'>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="public/assets/css/main.css" rel="stylesheet" media="all">
+    <link href="public/assets/css/animation.css" rel="stylesheet" media="all">
+
+    <!-- Hide .js-only elements if JavaScript is disabled. -->  
+    <noscript><style>.js-only { display: none !important; } </style></noscript>
+  </head>
+
+  <body>
+  <div class="navbar navbar-inverse navbar-static-top">
+      <div class='container'>
+          <div class="navbar-header">
+              <a href="/" class="navbar-brand">&#12296; Surfeurs du web &#12297;</a>
+              
+              <!-- Bootstrap button for toggling menu on small-screen devices. Requires JavaScript. -->
+              <button type="button" class="navbar-toggle js-only"
+                  data-toggle="collapse"
+                  data-target=".navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+          </div>
+
+          <!-- Menu toggled by Bootstrap button. -->
+          <ul class="nav navbar-nav navbar-right collapse navbar-collapse">
+              <li class="js-only"><a href="/menu1">Frites</a></li>
+              <li class="js-only"><a href="/secret">Secret de fou</a></li>              
+              <li class="js-only">
+                  <a href="#" data-toggle="dropdown">
+                      Plus de trucs <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                      <li><a href="/d3-js/maps">En fait non</a></li>
+                  </ul>
+              </li>         
+          </ul>
+          
+          <noscript><!-- Pure CSS menu for users who disable JavaScript. -->
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="/">Frites</a></li>
+                <li><a href="/secret">Secret de fou</a></li>
+                <li>
+                  <a href="#">Plus de trucs</a>
+                  <ul class="dropdown">
+                      <li><a href="/d3-js/maps">En fait non</a></li>
+                  </ul>
+                </li>
+              </ul>
+          </noscript>
+
+      </div>
+  </div>
+
+<div class='container-fluid'>
+
+	<form class="form-horizontal">
+	<fieldset>
+
+	<!-- Form Name -->
+	<legend>Ajouter ma trace !</legend>
+
+	<!-- Text input-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="ville">Ville</label>  
+	  <div class="col-md-4">
+	  <input id="ville" name="ville" type="text" placeholder="Tours" class="form-control input-md" required="">
+		
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="spot">Spot</label>  
+	  <div class="col-md-4">
+	  <input id="spot" name="spot" type="text" placeholder="Les vagues du bord de Loire :" class="form-control input-md">
+		
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="nickname">Mon petit nom &agrave; moi</label>  
+	  <div class="col-md-4">
+	  <input id="nickname" name="nickname" type="text" placeholder="Mc Walter" class="form-control input-md">
+		
+	  </div>
+	</div>
+	</fieldset>
+	</form>
+	<script>
+	runGameOfLife(100,600);
+	</script>
+	<section class="border text-center border-light p-3 mb-4">
+      <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#centralModalLg">Ajouter !</button>
+    </section>
+	<!-- Central Modal Large -->
+    <div class="modal fade" id="centralModalLg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <!--Content-->
+        <div class="modal-content">
+          <!--Header-->
+          <div class="modal-header">
+            <h4 class="modal-title w-100" id="myModalLabel">Ajout en cours !</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <!--Body-->
+          <div id="loading" class="modal-body">
+            &#x25FC;&#x25FC;&#x25FC;&#x25FB;&#x25FB;&#x25FB;
+          </div>
+          <!--Footer-->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+            <button type="button" class="btn btn-primary">Sauvegarder</button>
+          </div>
+        </div>
+        <!--/.Content-->
+      </div>
+    </div>
+    <!-- Central Modal Large -->
+
+</div>
+
+  <div class="footer">
+      <div class="container">
+          <div class="row" style="text-align: center;">
+              <a href="linkedin">
+                  <i class="fa fa-linkedin-square fa-3x"></i>
+              </a>
+              <!--
+              TEMPLATE FROM CODEWRITINGCOW !
+              <a href="https://github.com/CodeWritingCow">
+                  <i class="fa fa-github fa-3x"></i>
+              </a>-->
+              <h4>Surfeurs du web</h4>
+          </div>
+      </div>  
+  </div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="public/assets/js/scroll.js"></script>
+  <script src="public/assets/js/vibrate-phone.js"></script>
+
+  </body>
+</html>

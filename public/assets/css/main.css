@@ -1,0 +1,206 @@
+body {
+}
+.row {
+    margin-bottom: 20px;
+}
+.features .glyphicon {
+    font-size: 32px;
+}
+.footer {
+    padding: 20px 20px;
+}
+
+
+/* Gary Pang banner on top of webpage
+-------------------------------------------------- */
+.gary-pang-banner {
+    font-weight: 900;
+}
+
+@media (min-width: 768px) {
+    .gary-pang-banner {
+    font-size: 41px;
+    }
+}
+
+@media (min-width: 1366px) {
+    .gary-pang-banner {
+    font-size: 82px;
+    }
+}
+
+
+/* Responsive media
+-------------------------------------------------- */
+@media (max-width: 500px) {
+    img {
+    width: 100%;
+    }
+}
+
+
+/* Navbar
+-------------------------------------------------- */
+.navbar-nav > li > a:hover {
+    /* Nav links change color when mouse hovers over them */
+    background-color: #848484 !important;
+    color: #ffffff !important;
+}
+
+.navbar-nav > li > ul > li > a:hover {
+    /* Nav links change color when mouse hovers over them */
+    background-color: #848484 !important;
+    color: #ffffff !important;
+}
+
+.navbar-brand:hover {
+    background-color: #848484 !important;
+}
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 200px;
+}
+body{
+	background-color: #222;
+}
+.form-group {
+	color: #777;
+}
+legend{
+	color: #777;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 200px;
+}
+.footer {
+  color: #efefef;
+  background-color: #333;
+}
+.footer a {
+  color: #9af7fe;
+  text-decoration: none;
+}
+
+.footer i {
+    color: #f5f5f5;
+    margin-right: 5px;
+}
+
+.footer i:hover {
+    color: #848484;
+}
+
+
+/* Email button
+-------------------------------------------------- */
+#email-button a {
+    color: white;
+    text-decoration: none;
+}
+
+#email-button:hover a {
+    color: #9d9d9d;    
+}
+#email-button:active a {
+    color: black;
+}
+
+
+/* Makes webpage look like a resume
+-------------------------------------------------- */
+.resume {
+    margin-bottom: 40px;
+}
+
+.resume h1 {
+    /*margin-bottom: 40px;*/
+    font-size: 40px;
+}
+
+.resume h1, h2, h3, h4 {
+    font-family: 'Share Tech', sans-serif;
+}
+
+.resume-date {
+    font-style: italic;
+    text-align: center !important;
+    font-family: 'Share Tech', sans-serif;
+}
+
+.resume p, ul {
+    text-align: left;
+}
+
+.resume ul {
+    margin-top: 20px;
+}
+
+.resume li {
+    border-bottom: 1px dashed #cccccc;
+    margin-bottom: 10px;
+}
+
+/* Wrap <span class='resume-drop-cap'> tags around letter that you want as a dropcap. */
+.resume-drop-cap {
+    float: left;
+    font-size: 75px;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+    font-weight: bold;
+    font-family: 'Share Tech', sans-serif;
+}
+
+/* Dropdown menu for users who disable JavaScript
+-------------------------------------------------- */
+ul li ul.dropdown {
+  background: #ffffff;
+  min-width: 160px;
+  display: none;
+  position: absolute;
+  z-index: 999;
+  left: 0;
+  padding: 5px 0;
+}
+
+ul li:hover ul.dropdown {
+  display: block;
+  background-color: #ffffff;
+  min-width: 160px;
+  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+ul li ul.dropdown li {
+  display: block;
+  color: black;
+  padding: 5px 10px;
+}
+
+ul li ul.dropdown li:hover {
+  background-color: #848484;
+}
+
+ul li ul.dropdown li:hover a {
+  background-color: #848484;
+  color: white;
+}
+
+ul li ul.dropdown li a {
+  text-decoration: none;
+  color: black;
+}

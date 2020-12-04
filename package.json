@@ -1,0 +1,17 @@
+{
+  "name": "php-template-test-codewritingcow",
+  "version": "1.0.0",
+  "description": "Test for using PHP templates with CodeWritingCow.com",
+  "main": {},
+  "start": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gary Pang",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-connect-php": "0.0.8"
+  }
+}
